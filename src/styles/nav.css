@@ -1,0 +1,60 @@
+.navigation {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    padding: 15px;
+    align-items: center;
+    border-bottom: 1px solid #010101;
+}
+.headerLogo {
+    max-width: 60px;
+    max-height: 22.87px;
+}
+
+.search {
+    position: relative;
+}
+
+.searchHeader {
+    width: 372px;
+    height: 56px;
+    background: #d5d5d5;
+    border-radius: 10px;
+    border: #F5F5F5;
+    padding-left: 48px;
+    font-size: 15px;
+}
+.searchHeader::placeholder {
+   color: #010101;
+}
+
+.magnifier {
+    position: absolute;
+    left: 20px;
+    top: 20px;
+    
+}
+
+.navLink {
+    text-decoration: none;
+    color: #010101;
+    font-size: 18px;
+    font-weight: 500;
+    transition: 0.3s;
+}
+.navLink:hover {
+    transform: scale(1.1);
+}
+.navImages {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    margin-left: 65px;
+}
+.navImg {
+    cursor: pointer;
+    transition: 0.2s;
+}
+.navImg:hover {
+    transform: scale(1.1);
+}
