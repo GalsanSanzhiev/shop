@@ -79,7 +79,7 @@ function App() {
     },
   ]);
 
-  const [searchTerm, setSearchTerm] = useState("");
+  const [setSearchTerm] = useState("");
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
