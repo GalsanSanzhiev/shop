@@ -9,7 +9,6 @@ import "./styles/cart.css";
 import "./styles/nav.css";
 import "./styles/main.css";
 import "./styles/productModal.css";
-import "./styles/productModal.css";
 import "./styles/banners.css";
 import "./styles/sale.css";
 import "./styles/footer.css";
@@ -79,14 +78,21 @@ function App() {
     },
   ]);
 
-  const [setSearchTerm] = useState("");
+  // ИСПРАВЛЕНО: правильное имя переменной searchTerm
+  const [searchTerm, setSearchTerm] = useState("");
   const [selectedProduct, setSelectedProduct] = useState(null);
   const [cart, setCart] = useState([]);
   const [isCartOpen, setIsCartOpen] = useState(false);
   const [isPaymentOpen, setIsPaymentOpen] = useState(false);
   const [orderTotal, setOrderTotal] = useState(0);
 
-  // Загрузка корзины из localStorage
+  // ДОБАВЛЕНО: фильтрация товаров по поиску
+  const filteredProducts = searchTerm 
+    ? products.filter(product =>
+        product.name.toLowerCase().includes(searchTerm.toLowerCase())
+      )
+    : products;
+
   useEffect(() => {
     const savedCart = localStorage.getItem("cart");
     if (savedCart) {
@@ -94,7 +100,6 @@ function App() {
     }
   }, []);
 
-  // Сохранение корзины в localStorage
   useEffect(() => {
     localStorage.setItem("cart", JSON.stringify(cart));
   }, [cart]);
@@ -155,10 +160,7 @@ function App() {
   const handlePaymentConfirm = (paymentMethod) => {
     alert(`✅ Order confirmed!\n\nPayment method: ${paymentMethod}\nTotal: $${orderTotal.toFixed(2)}\n\nThank you for your purchase! 🎉`);
     
-    // Очищаем корзину
     setCart([]);
-    
-    // Закрываем все модальные окна
     setIsPaymentOpen(false);
     setIsCartOpen(false);
   };
@@ -184,7 +186,8 @@ function App() {
       </div>
       
       <div id="products" className="cards">
-        {products.map((product) => (
+        {/* ИСПРАВЛЕНО: используем filteredProducts вместо products */}
+        {filteredProducts.map((product) => (
           <Card
             key={product.id}
             image={product.image}
@@ -196,10 +199,16 @@ function App() {
         ))}
       </div>
       
+      {/* ДОБАВЛЕНО: сообщение, если товары не найдены */}
+      {filteredProducts.length === 0 && (
+        <div className="no-results" style={{ textAlign: 'center', padding: '40px', fontSize: '18px', color: '#666' }}>
+          <p>По запросу "{searchTerm}" ничего не найдено</p>
+        </div>
+      )}
+      
       <Sale />
       <Footer />
 
-      {/* Модальное окно с товаром */}
       {selectedProduct && (
         <ProductModal 
           product={selectedProduct} 
@@ -208,7 +217,6 @@ function App() {
         />
       )}
 
-      {/* Корзина */}
       {isCartOpen && (
         <Cart 
           cart={cart}
@@ -219,7 +227,6 @@ function App() {
         />
       )}
 
-      {/* Модальное окно оплаты */}
       {isPaymentOpen && (
         <PaymentModal 
           onClose={closePaymentModal}
