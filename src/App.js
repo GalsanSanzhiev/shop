@@ -9,6 +9,7 @@ import "./styles/cart.css";
 import "./styles/nav.css";
 import "./styles/main.css";
 import "./styles/productModal.css";
+import "./styles/paymentModal.css";
 import "./styles/banners.css";
 import "./styles/sale.css";
 import "./styles/footer.css";
