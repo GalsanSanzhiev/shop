@@ -1,0 +1,44 @@
+.footer {
+    background: #000000;
+    display: flex;
+    justify-content: center;
+    padding: 104px 113px 161px 160px;
+    gap: 40px;
+}
+
+.footerTitleOfList {
+    color: rgb(234, 234, 234);
+    margin-bottom: 15px;
+}
+
+.footerText {
+    color: #b7b7b7;
+    width: 384px;
+    margin-bottom: 10px;
+    text-decoration: none;
+    margin-bottom: 20px;
+}
+
+.firstColumn {
+    width: 384px;
+    margin-right: 100px;
+    
+}
+
+.footerList {
+    list-style: none;
+}
+
+.contact {
+    display: flex;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+.footerIcon {
+    max-width: 30px;
+    cursor: pointer;
+    
+}
+.tel {
+    color: aliceblue;
+}
