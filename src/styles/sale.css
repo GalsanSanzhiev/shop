@@ -1,0 +1,70 @@
+.sale {
+  position: relative;
+}
+
+.saleText {
+  position: absolute;
+  top: 160px;
+  left: 550px;
+  text-align: center;
+}
+
+.saleTitle {
+  font-size: 42px;
+  color: aliceblue;
+  font-weight: 200;
+}
+.saleTitle span {
+  font-weight: 500;
+}
+.saleDescr {
+  font-size: 20px;
+  color: #adadad;
+  margin-bottom: 30px;
+}
+
+.saleButton {
+  padding: 15px 66px 15px 66px;
+  background: transparent;
+  border: 2px solid #d7d7d7;
+  border-radius: 15px;
+  font-size: 18px;
+  color: #d3d2d2;
+  cursor: pointer;
+
+  transition: 0.3s;
+}
+.saleButton:hover {
+  background: #ffffff;
+  color: #050505;
+}
+
+.saleImg {
+  width: 100%;
+  margin-bottom: -20px;
+}
+
+@media (max-width: 768px) {
+  .saleText {
+    top: -100px;
+    left: 14px;
+  }
+  .saleImg {
+    display: none;
+  }
+
+  .saleTitle {
+    color: #000;
+    font-size: 32px;
+    margin-bottom: 15px;
+  }
+  .saleDescr {
+    color: #000;
+    font-size: 16px;
+  }
+  .saleButton {
+    border: 2px solid #000000;
+    color: #000000;
+    padding: 15px 25px;
+  }
+}

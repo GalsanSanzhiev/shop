@@ -1,0 +1,62 @@
+.userModal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 2000;
+}
+.userForm {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    border-radius: 20px;
+    padding: 40px;
+    width: 400px;
+    height: 400px;
+}
+.closeImg {
+    max-width: 20px;
+    cursor: pointer;
+}
+.modalHeader {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 40px;
+}
+
+.userInput {
+    padding: 10px;
+    color: rgb(0, 0, 0);
+    font-size: 16px;
+    border-radius: 12px;
+    margin-bottom: 5px;
+}
+.userInput::placeholder {
+    color: rgb(0, 0, 0);
+}
+.userModalButton {
+    padding: 20px;
+    color: aliceblue;
+    font-size: 20px;
+    background: #000;
+    border-radius: 15px;
+    margin-top: 20px;
+    margin-bottom: 10px;
+    cursor: pointer;
+    transition: all .4s;
+}
+.userModalButton:hover {
+    color: rgb(1, 1, 1);
+    background: #ffffff;
+}
+.userRegistr {
+    cursor: pointer;
+    color: blue;
+    margin-left: 10px;
+}
