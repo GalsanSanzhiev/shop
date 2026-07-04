@@ -1,0 +1,172 @@
+.payment-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.7);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 3000;
+  animation: fadeIn 0.3s ease;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.payment-modal {
+  background: white;
+  border-radius: 12px;
+  padding: 30px;
+  max-width: 500px;
+  width: 90%;
+  max-height: 90vh;
+  overflow-y: auto;
+  position: relative;
+  animation: slideUp 0.3s ease;
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(50px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+.payment-close {
+  position: absolute;
+  top: 15px;
+  right: 20px;
+  font-size: 28px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #666;
+}
+
+.payment-close:hover {
+  color: #000;
+}
+
+.payment-modal h2 {
+  margin: 0 0 10px 0;
+  text-align: center;
+}
+
+.payment-total {
+  text-align: center;
+  font-size: 24px;
+  font-weight: bold;
+  color: #007bff;
+  margin: 10px 0 20px;
+}
+
+.payment-methods {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+  margin: 20px 0;
+}
+
+.payment-method {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+  padding: 15px;
+  border: 2px solid #eee;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.payment-method:hover {
+  border-color: #007bff;
+  background: #f8f9ff;
+}
+
+.payment-method input[type="radio"] {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
+.payment-method img {
+  width: 60px;
+  height: 30px;
+  object-fit: contain;
+}
+
+.payment-form {
+  margin: 20px 0;
+}
+
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: 500;
+  color: #333;
+}
+
+.form-group input {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.form-group input:focus {
+  outline: none;
+  border-color: #007bff;
+}
+
+.form-row {
+  display: flex;
+  gap: 15px;
+}
+
+.form-row .form-group {
+  flex: 1;
+}
+
+.payment-info {
+  background: #f8f9fa;
+  padding: 15px;
+  border-radius: 8px;
+  margin: 20px 0;
+  text-align: center;
+  color: #666;
+}
+
+.payment-confirm {
+  width: 100%;
+  padding: 14px;
+  background: #28a745;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 20px;
+}
+
+.payment-confirm:hover {
+  background: #218838;
+}
